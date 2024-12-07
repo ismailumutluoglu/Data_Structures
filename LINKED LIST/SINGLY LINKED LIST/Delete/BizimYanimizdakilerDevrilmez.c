@@ -32,20 +32,21 @@ int main()
         printf("1-devam 0-cikis");
         scanf("%d",&choise);
     }
-
+    //delete
     int choise2 = 1 ; 
     while(choise2)
     {
         struct node*current = head ; 
         struct node*prev = NULL ; 
         int key ; 
-        printf("anahtar kelimeyi giriniz : "); scanf("%d",&key);
-
+        printf("anahtar sayiyi giriniz : "); scanf("%d",&key);
+        //bastan silme
         if(current->data == key)
         {
             head = current->next ; 
             free(current);
         }
+        //sondan veya herhangi bir yerden silme
         else
         {
             while(current != NULL && current->data != key)
@@ -67,6 +68,7 @@ int main()
         printf("cikis icin 0 a tikla devam etmek icin 1");
         scanf("%d",&choise2);
     }
+    //display
     struct node*temp = head ; 
     while(temp != NULL)
     {
