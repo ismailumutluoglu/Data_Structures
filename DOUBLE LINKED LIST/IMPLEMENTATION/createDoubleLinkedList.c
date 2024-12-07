@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 struct node
 {
     int data;
@@ -8,12 +9,14 @@ struct node
 };
 
 struct node *head = NULL;
+
 struct node *createDoubleLinkedList(struct node *head);
 void displayDoubleLinkedList(struct node*head);
+
 int main()
 {
     int choice;
-    printf("1-create\n2-display\n0 bitir\n");
+    printf("1-create\n2-display\n0 exit\n");
     scanf("%d", &choice);
     while (choice)
     {
@@ -28,7 +31,7 @@ int main()
         default:
             break;
         }
-        printf("1-create\n2-display\0 bitir");
+        printf("1-create\n2-display\0 exit");
         scanf("%d", &choice);
     }
     return 0;
