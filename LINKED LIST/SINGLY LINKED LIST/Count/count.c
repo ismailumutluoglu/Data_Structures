@@ -6,8 +6,10 @@ struct node
     int data ; 
     struct node* next ; 
 };
+
 struct node*head = NULL ,*newnode ; 
 int count(struct node*head);
+
 int main()
 {
     int choise = 1 ; 
@@ -35,6 +37,7 @@ int main()
     }
     printf("%d",count(head));
 }
+//recursively
 int count(struct node*head)
 {
     if(head != NULL)
