@@ -8,11 +8,11 @@ struct studentInfo
     struct studentInfo* next ; 
 };
 
-struct studenInfo* head; 
+struct studenInfo*head = NULL ; 
 
 struct studentInfo* createAList(struct studentInfo*head);
-void readList(struct studentInfo*head);
 struct studentInfo* reverseAList(struct studentInfo*head);
+void displayList(struct studentInfo*head);
 
 int main()
 {
@@ -22,8 +22,9 @@ int main()
     {
         int choise ; 
         printf("1-CREATE  LIST\n");
-        printf("2-TREVERSE  LIST/READ LIST\n");
+        printf("2-DISPLAY LIST\n");
         printf("3-REVERSE LIST\n");
+        printf("EXIT 0 ");
         scanf("%d",&choise);
         switch (choise)
         {
@@ -31,7 +32,7 @@ int main()
         break ;
         case 1 : head = createAList(head);
             break;
-        case 2 : readList(head);
+        case 2 : displayList(head);
             break ; 
         case 3 : head = reverseAList(head); 
             break ; 
@@ -60,14 +61,7 @@ struct studentInfo*createAList(struct studentInfo*head)
     newNode->next = NULL ; 
     return head ; 
 }
-void readList(struct studentInfo*head)
-{
-    struct studentInfo*temp = head ; 
-    while(temp != NULL)
-    {
-        printf("%s %d\n",temp->name,temp->id);
-    }
-}
+
 struct studentInfo*reverseAList(struct studentInfo*head)
 {
     struct studentInfo*prevNode,*currentNode,*nextNode ; 
@@ -82,4 +76,12 @@ struct studentInfo*reverseAList(struct studentInfo*head)
     }
     head = prevNode ;
     return head ; 
+}
+void displayList(struct studentInfo*head)
+{
+    struct studentInfo*temp = head ; 
+    while(temp != NULL)
+    {
+        printf("%s %d\n",temp->name,temp->id);
+    }
 }
