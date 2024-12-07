@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 struct node
 {
     int no ; 
@@ -10,9 +11,11 @@ struct node
 };
 
 struct node*head = NULL ; 
+
 struct node*createAList(struct node*head);
 void display();
 void function();
+
 int main()
 {
     head = createAList(head);
